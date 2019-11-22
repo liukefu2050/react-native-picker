@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -130,7 +129,7 @@ public class PickerViewModule extends ReactContextBaseJavaModule implements Life
         reactContext.addLifecycleEventListener(this);
     }
 
-    @Override
+
     public String getName() {
         return REACT_CLASS;
     }
@@ -187,7 +186,7 @@ public class PickerViewModule extends ReactContextBaseJavaModule implements Life
                 confirmTV.setTextColor(argb(colors[3], colors[0], colors[1], colors[2]));
             }
             confirmTV.setOnClickListener(new View.OnClickListener() {
-                @Override
+
                 public void onClick(View v) {
                     switch (curStatus) {
                         case 0:
@@ -223,7 +222,7 @@ public class PickerViewModule extends ReactContextBaseJavaModule implements Life
                 cancelTV.setTextColor(argb(colors[3], colors[0], colors[1], colors[2]));
             }
             cancelTV.setOnClickListener(new View.OnClickListener() {
-                @Override
+
                 public void onClick(View v) {
                     switch (curStatus) {
                         case 0:
@@ -300,7 +299,7 @@ public class PickerViewModule extends ReactContextBaseJavaModule implements Life
                     pickerViewLinkage.setIsLoop(isLoop);
 
                     pickerViewLinkage.setOnSelectListener(new OnSelectedListener() {
-                        @Override
+
                         public void onSelected(ArrayList<ReturnData> selectedList) {
                             returnData = selectedList;
                             commonEvent(EVENT_KEY_SELECTED);
@@ -319,7 +318,7 @@ public class PickerViewModule extends ReactContextBaseJavaModule implements Life
                     pickerViewAlone.setIsLoop(isLoop);
 
                     pickerViewAlone.setOnSelectedListener(new OnSelectedListener() {
-                        @Override
+
                         public void onSelected(ArrayList<ReturnData> selectedList) {
                             returnData = selectedList;
                             commonEvent(EVENT_KEY_SELECTED);
@@ -477,24 +476,24 @@ public class PickerViewModule extends ReactContextBaseJavaModule implements Life
 
     private void sendEvent(ReactContext reactContext,
                            String eventName,
-                           @Nullable WritableMap params) {
+                           WritableMap params) {
         reactContext
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit(eventName, params);
     }
 
-    @Override
+
     public void onHostResume() {
 
     }
 
-    @Override
+
     public void onHostPause() {
         hide();
         dialog = null;
     }
 
-    @Override
+
     public void onHostDestroy() {
 
     }
