@@ -1,8 +1,9 @@
 {
   "name": "react-native-picker",
   "version": "4.0.18",
-  "description": "",
+  "description": "Picker",
   "main": "index.js",
+  "homepage": "https://github.com/beefe/react-native-picker#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
